@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+  <!-- bxSlider Javascript file -->
+  <script src="./jquery.bxslider/jquery.bxslider.min.js"></script>
+  <script src="./jquery.bxslider/jquery.bxslider.js"></script>
+  <!-- bxSlider CSS file -->
+  <link href="./jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+<!--<div class="redDiv" style="width: 100px; height: 100px; background-color: red; display: none;"></div>
+<button class="toggleButton">click me</button>
+<br/>
+choose color
+<button class="color" data-color="red">red</button>
+<button class="color" data-color="green">green</button>
+<button class="color" data-color="yellow">yellow</button>
+
+<br/>
+-->
+<div class="gor"></div>
+<div class="ver">
+  <h2>YTTTTTTTTTTTTTTTTTTTT</h2>
+</div>
+
+
+<div id="accordion">
+  <h1><a href="#">1</a></h1>
+  <div class="#">
+    kfkfkfkkfkkfkfkf
+  </div>
+  <h1><a href="#">2</a></h1>
+  <div>
+   <p> dbfhdsgfvhjdghjs</p>
+  </div>
+  <h1><a href="#">3</a></h1>
+  <div>
+    <p> vfbdghjvgdhjgvd</p>
+    </div>
+</div>
+
+<div class="my-clider">
+  <ul class="bxslider">
+    <li><img src="./img/image1.jpg" title="CAT" /></li>
+    <li><img src="./img/image2.jpg" /></li>
+    <li><img src="./img/image3.jpg" /></li>
+    <li><img src="./img/image4.jpg" /></li>
+    <li><img src="./img/image5.jpg" /></li>
+  </ul>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins)
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed
+<script src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript">
+  $(document).ready(function(){
+    var div = $('.redDiv');
+    $('.toggleButton').click(function(){
+      div.is(':visible') ? div.hide('slow') : div.show('slow');
+    });
+    $('.color').click(function () {
+      div.css('background-color', $(this).data('color'));
+    });
+  });
+</script>
+
+<!--<script>
+  jQuery("h2").css("color", "blue"); </script>-->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("h2").css("color", "blue");
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("div.gor").css("background-color","gray");
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("div.gor").draggable({axis:"x"},{cursor:"move"});
+    $("div.ver").draggable ({axis:"y"},{cursor:"help"});
+    $("div.gor").resizable({animate:true,helper:"ui-state-highlight"});
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#accordion").accordion();
+    $("#accordion").css("padding-top","50px");
+    $("#accordion").css("padding-bottom","50px");
+    $("#accordion").css("clear","both");
+
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("ul.bxslider").bxSlider({
+      auto: true,
+      autoControls: true,
+     // mode: 'fade',
+      //captions: true
+      minSlides: 3,
+      maxSlides: 3,
+      slideWidth: 360,
+      slideMargin: 10
+    });
+  });
+</script>
+
+
+</body>
+</html>
