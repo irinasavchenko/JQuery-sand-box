@@ -3,56 +3,56 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>Jquery</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <!-- bxSlider Javascript file -->
-  <script src="./jquery.bxslider/jquery.bxslider.min.js"></script>
-  <script src="./jquery.bxslider/jquery.bxslider.js"></script>
-  <!-- bxSlider CSS file -->
-  <link href="./jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet">
+  <!-- Add JQuery and JQuery ui Javascript file-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <!-- Add JQuery ui CSS file-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!-- Add bxSlider Javascript file -->
+  <script src="./jquery.bxslider/jquery.bxslider.min.js"></script>
+  <!-- Add bxSlider CSS file -->
+  <link href="./jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+  <!-- Add scrollTo Javascript file -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+  <!-- Add Google Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light|Bree+Serif' rel='stylesheet' type='text/css'>
+  <!-- Add Font Awesome-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
-<body>
-<!--<div class="redDiv" style="width: 100px; height: 100px; background-color: red; display: none;"></div>
-<button class="toggleButton">click me</button>
-<br/>
-choose color
-<button class="color" data-color="red">red</button>
-<button class="color" data-color="green">green</button>
-<button class="color" data-color="yellow">yellow</button>
 
-<br/>
--->
-<div class="menu">
+<body>
+
+<div class="menu center">
   <ul>
-    <li class="drag-resize-div"><a href="javascript:void(0)">Размер и положение блока</a></li>
-    <li class="accordion"><a href="javascript:void(0)">Аккордион</a></li>
-    <li class="slider"><a href="javascript:void(0)">Слайдер</a></li>
+    <li class="drag-resize-div current"><a href="javascript:void(0)"><i class="fa fa-clone fa-lg fa-fw"></i>Размер и положение блока</a></li>
+    <li class="accordion"><a href="javascript:void(0)"><i class="fa fa-barcode fa-lg fa-fw"></i>Аккордион</a></li>
+    <li class="slider"><a href="javascript:void(0)"><i class="fa fa-sliders fa-lg fa-fw"></i>Слайдер</a></li>
   </ul>
 </div>
 
 <div id="drag-resize-div">
-  <div class="gor"></div>
-  <div class="ver">
-    <h2>YTTTTTTTTTT</h2>
+  <div class="gor">
+    <span>I`m draggble and resizable div</span> </br>
+    <img src="./img/add_communities_1.png">
   </div>
-</div>
+  <div class="ver">
+    <span>I`m only draggable div</span>
+  </div>
 
 <div id="accordion">
   <h1><a href="#">1</a></h1>
-  <div class="#">
-    kfkfkfkkfkkfkfkf
+  <div>
+   <p> Accordion1</p>
   </div>
   <h1><a href="#">2</a></h1>
   <div>
-   <p> dbfhdsgfvhjdghjs</p>
+   <p> Accordion2</p>
   </div>
   <h1><a href="#">3</a></h1>
   <div>
-    <p> vfbdghjvgdhjgvd</p>
+    <p> Accordion3</p>
     </div>
 </div>
 
@@ -66,58 +66,28 @@ choose color
   </ul>
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins)
-<script src="https://code.jquery.com/jquery.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed
-<script src="js/bootstrap.min.js"></script>
-<!--<script type="text/javascript">
-  $(document).ready(function(){
-    var div = $('.redDiv');
-    $('.toggleButton').click(function(){
-      div.is(':visible') ? div.hide('slow') : div.show('slow');
-    });
-    $('.color').click(function () {
-      div.css('background-color', $(this).data('color'));
-    });
-  });
-</script>
-
-<!--<script>
-  jQuery("h2").css("color", "blue"); </script>-->
+<div class="animated-icon">
+<a href="#"><i class="fa fa-spinner fa-pulse fa-3x"></i></a>
+</div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $("h2").css("color", "blue");
-    $("div.gor").css("background-color","gray");
+    $("span").css("color", "white");
+    $("div.gor").css("background-color","rgba(12, 66, 121, 0.611765)");
     $("div.gor").draggable({axis:"x"},{cursor:"move"});
     $("div.ver").draggable ({axis:"y"},{cursor:"help"});
     $("div.gor").resizable({animate:true,helper:"ui-state-highlight"});
-});
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
     $("ul.bxslider").bxSlider({
       auto: true,
       autoControls: true,
-     // mode: 'fade',
+      // mode: 'fade',
       //captions: true
       minSlides: 3,
       maxSlides: 3,
       slideWidth: 360,
       slideMargin: 10
     });
-  });
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
     $("#accordion").accordion();
     $("#accordion").css("clear","both");
-  });
-</script>
-
-<script type="text/javascript">
-  jQuery(document).ready(function(){
     jQuery('li.drag-resize-div a').click(function() {
       jQuery.scrollTo('#drag-resize-div');
     });
@@ -127,7 +97,8 @@ choose color
     jQuery('li.slider a').click(function() {
       jQuery.scrollTo('#my-slider');
     });
-  });
+
+});
 </script>
 
 </body>
