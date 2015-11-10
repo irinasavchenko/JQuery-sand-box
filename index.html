@@ -26,13 +26,13 @@
 
 <div class="menu center">
   <ul>
-    <li class="drag-resize-div current"><a href="javascript:void(0)"><i class="fa fa-clone fa-lg fa-fw"></i>Размер и положение блока</a></li>
-    <li class="accordion"><a href="javascript:void(0)"><i class="fa fa-barcode fa-lg fa-fw"></i>Аккордион</a></li>
-    <li class="slider"><a href="javascript:void(0)"><i class="fa fa-sliders fa-lg fa-fw"></i>Слайдер</a></li>
+    <li class="current"><a href="javascript:void(0)" data-id="drag-resize-div" class="active-link"><i class="fa fa-clone fa-lg fa-fw"></i>Размер и положение блока</a></li>
+    <li><a href="javascript:void(0)" data-id="accordion" class="active-link"><i class="fa fa-barcode fa-lg fa-fw"></i>Аккордион</a></li>
+    <li><a href="javascript:void(0)" data-id="my-slider" class="active-link"><i class="fa fa-sliders fa-lg fa-fw"></i>Слайдер</a></li>
   </ul>
 </div>
 
-<div id="drag-resize-div">
+<div id="drag-resize-div" class="hidden">
   <div class="gor">
     <span>I`m draggble and resizable div</span> </br>
     <img src="./img/add_communities_1.png">
@@ -40,8 +40,8 @@
   <div class="ver">
     <span>I`m only draggable div</span>
   </div>
-
-<div id="accordion">
+</div>
+<div id="accordion" class="hidden">
   <h1><a href="#">1</a></h1>
   <div>
    <p> Accordion1</p>
@@ -56,7 +56,7 @@
     </div>
 </div>
 
-<div id="my-slider">
+<div id="my-slider" class="hidden">
   <ul class="bxslider">
     <li><img src="./img/image1.jpg" title="CAT" /></li>
     <li><img src="./img/image2.jpg" /></li>
@@ -70,12 +70,12 @@
 <a href="#"><i class="fa fa-spinner fa-pulse fa-3x"></i></a>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){
+  $(document).ready(function() {
     $("span").css("color", "white");
-    $("div.gor").css("background-color","rgba(12, 66, 121, 0.611765)");
-    $("div.gor").draggable({axis:"x"},{cursor:"move"});
-    $("div.ver").draggable ({axis:"y"},{cursor:"help"});
-    $("div.gor").resizable({animate:true,helper:"ui-state-highlight"});
+    $("div.gor").css("background-color", "rgba(12, 66, 121, 0.611765)");
+    $("div.gor").draggable({axis: "x"}, {cursor: "move"});
+    $("div.ver").draggable({axis: "y"}, {cursor: "help"});
+    $("div.gor").resizable({animate: true, helper: "ui-state-highlight"});
     $("ul.bxslider").bxSlider({
       auto: true,
       autoControls: true,
@@ -87,19 +87,36 @@
       slideMargin: 10
     });
     $("#accordion").accordion();
-    $("#accordion").css("clear","both");
-    jQuery('li.drag-resize-div a').click(function() {
-      jQuery.scrollTo('#drag-resize-div');
+    $("#accordion").css("clear", "both");
+    $("a.active-link").click(function () {
+      $('li.current').removeClass('current');
+      $(this).parent().addClass('current');
+    //  $.scrollTo("#drag-resize-div");
+      $("div.hidden").hide();
+      $("#" + $(this).data("id")).show("slow");
+     // $("#drag-resize-div").show();
+     // $("#accordion").hide();
+     // $("#my-slider").hide();
     });
-    jQuery('li.accordion a').click(function() {
-      jQuery.scrollTo('#accordion');
-    });
-    jQuery('li.slider a').click(function() {
-      jQuery.scrollTo('#my-slider');
-    });
+    /*
+      $("li.accordion a").click(function () {
+        $.scrollTo("#accordion");
+        $("#accordion").show();
+        $("#drag-resize-div").hide();
+        $("#my-slider").hide();
+      });
+        $("li.slider a").click(function() {
+          $.scrollTo("#my-slider");
+          $("#my-slider").show();
+          $("#drag-resize-div").hide();
+          $("#accordion").hide();
 
-});
+        });*/
+
+      });
 </script>
+
+
 
 </body>
 </html>
