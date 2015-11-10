@@ -1,0 +1,14 @@
+﻿.dynamic-rows {
+    width: 200px;
+    border: 1px solid;
+    border-collapse: collapse;
+    background-image: none;
+}
+
+table tr.active {
+    background-color: blue;
+}
+
+.not-active {
+    background-color: green;
+}

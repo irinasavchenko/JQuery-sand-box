@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="./table.css">
+
+</head>
+<body>
+<table class="dynamic-rows" border="1">
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+  </tr>
+</table>
+<button id="up" class="actionButton">up</button>
+<button id="down" class="actionButton">down</button>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("table tr").click(function(event){
+      $("table tr").removeClass("active");
+      $(this).addClass("active");
+      event.stopPropagation();
+    });
+    $(".actionButton").click(function(){
+      var activeRow = $("table tr.active");
+      if(activeRow.length!==1){
+        return false;
+      }
+     if ( $(this).is("#up")) {
+       var prev = activeRow.prev();
+       if (prev.length) {
+         prev.before(activeRow);
+       }
+     }
+      if ($(this).is("#down")){
+        var next = activeRow.next();
+        if(next.length) {
+          next.after(activeRow);
+        }
+      }
+    });
+ /*   $(document).click(function(event){
+      var activeRow = $("table tr.active");
+      if ($(event.target).closest(".dynamic-rows,.actionButton").length) return;
+      if(activeRow.length) {
+        $(activeRow).removeClass("active");
+      }
+      event.stopPropagation();
+    });*/
+    $(document).click(function(event) {
+      var activeRow = $("table tr.active");
+      if (!$(event.target).is(".actionButton") && !$(event.target).is(".dynamic-rows")) {
+        $(activeRow).removeClass("active");
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
