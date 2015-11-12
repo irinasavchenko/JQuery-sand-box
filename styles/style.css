@@ -4,29 +4,17 @@
 }
 
 body {
-    background-image: url(./img/code.jpg);
+    background-image: url(../img/code1.jpg);
 }
 #drag-resize-div, #my-slider, #accordion {
     height: 500px;
     padding-top: 100px;
 }
-/*
-#drag-resize-div {
-    background-color: #94B8DC;
-}
 
-#my-slider {
-    background-color: #f1a899;
-}
-
-#accordion {
-    background-color: #BDBD86;
-}
-*/
 .menu {
     width: 100%;
     height: 70px;
-    background-color: #114B86;
+    background-color: #204358;/* #114B86;*/
     margin-bottom: 50px;
     position: fixed;
     z-index: 9999;
@@ -56,7 +44,7 @@ body {
 }
 
 .menu .current a, .menu a:hover {
-    background: #3399FF;
+    background: #42b6dc; /*#3399FF;*/
 
     color: #fff;
 
@@ -112,9 +100,6 @@ img {
     color: white;
 }
 
-.hidden {
-
-}
 
 
 
